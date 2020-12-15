@@ -3328,15 +3328,6 @@ input, select, textarea {
 
 		}
 
-.row {
-  display: flex;
-  white-space: nowrap;
-}
-
-.column {
-  flex: 25%;
-  padding: 0px;
-}
 
 .subtitle {
   font-weight: bold;
