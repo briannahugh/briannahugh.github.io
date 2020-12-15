@@ -3330,11 +3330,12 @@ input, select, textarea {
 
 .row {
   display: flex;
+  white-space: nowrap;
 }
 
 .column {
   flex: 25%;
-  padding: 5px;
+  padding: 0px;
 }
 
 .subtitle {
