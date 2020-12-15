@@ -58,7 +58,7 @@
 							<p>Step 1: Web Scraping cookie recipes</p>
 							<p>I set up a web crawler using python's Scrapy to search for "chewy" chocolate chip cookies and "crispy" chocoalte chip cookies on the Food Network respostiory.  For each recipe, I scraped the title, url, ingredients, and directions.</p>
 							<p class="subtitle">Step 2: Calculating ingredient percentages by weight</p>
-							<p>this is how i did it</p>
+							<p>Using regular expressions I extracted the type, quantity, and units for each ingredient and then calculated its weight in grams to arrive at a percentage.  Next, I created violin plots to see how crispy and chewy cookies compared in the four main ingredients; flour, butter, sugar, and egg. </p>
 							<div class="row">
 								<div class="column">
 									<img src="images/flour.png" alt="" />
@@ -73,8 +73,9 @@
 									<img src="images/egg.png" alt="" />
 								</div>
 							</div>
-							<p>Step 3: Calculating composition at a more granular level</p>
-							<p>this is how i did it</p>
+							<p>As expected, chewy cookies had relatively high flour (~23%) versus crispy cookies (~19%).  However, comparing these main ingredients didn't account for substitutes that were used in many cases e.g. oats instead of flour, oil instead of butter, etc.
+							<p class="subtitle">Step 3: Calculating composition at a more granular level</p>
+							<p>To account for different types of ingredients, I went down one level further and extracted the expected levels of protein (flour, oats, egg), fat (oil, butter, shortening), sucrose (sugar, honey, syrup) and water (egg, vanilla, butter) for each ingredient and created the same plots. </p>
 							<div class="row">
 								<div class="column">
 									<img src="images/protein.png" alt="" />
@@ -89,7 +90,19 @@
 									<img src="images/water.png" alt="" />
 								</div>
 							</div>
-							<p>Step 4: Running a classification algorithm to predict crispiness</p>				
+							<p>This successfully differentiated the plots further.  The next step was to check if there was a visual boundary between crispy and chewy cookies that could be seen on 2d plots.</p>
+							<div class="row">
+								<div class="column">
+									<img src="images/fat_vs_protein.png" alt="" />
+								</div>
+								<div class="column">
+									<img src="images/sucrose_vs_protein.png" alt="" />
+								</div>
+								<div class="column">
+									<img src="images/fat+sucrose_vs_protein.png" alt="" />
+								</div>
+							</div>							
+							<p class="subtitle">Step 4: Running a classification algorithm to predict crispiness</p>				
 							<p></p>
 							<p></p>
 							<p></p>						
