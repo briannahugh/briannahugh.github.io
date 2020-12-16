@@ -3328,8 +3328,23 @@ input, select, textarea {
 
 		}
 
-
+/*Added by me */
 .subtitle {
   font-weight: bold;
 }
-	
+
+<style type="text/css">
+       .studentInfo {
+           width: 500px;
+           border-collapse: collapse;
+       }
+ 
+           .studentInfo td {
+               border: 1px solid black;
+           }
+ 
+       .header {
+           text-align: center;
+           font-weight: bolder;
+       }
+   </style>
