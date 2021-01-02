@@ -2369,7 +2369,23 @@ input, select, textarea {
 				}
 
 			}
+		.image.dashboard {
+			display: block;
+			margin: 0 0 3em 0;
+			width: 80%;
+		}
 
+			.image.dashboard img {
+				width: 80%;
+			}
+
+			@media screen and (max-width: 736px) {
+
+				.image.main {
+					margin: 0 0 2em 0;
+				}
+
+			}
 /* Table */
 
 	.table-wrapper {
