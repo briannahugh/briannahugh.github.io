@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Cookie Classification</title>
+		<title>Cookie Analysis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -106,10 +106,10 @@
 								    </td>
 								</tr>
 							    </tbody></table>
-							<p>Now I just needed a way to validate my hypotheses with quantitative results.   If I were to conduct hundreds of cookie experiments, I would test how cookie diameter increases with butter content and quantify crispiness by dropping cookies from different heights.  Instead, I decided to approach this with machine learning.</p>
-							<p>I intuitively wanted to run a linear regression algorithm to model the relationship between characteristics and compositions, but I didn't have the data for it.  However, by web-scraping I could get a data set for which easy recipe is assigned each a binary classification (i.e. crispy or chewy, thick or thin, smooth or wrinkled) by searching for key words in their titles and description.  I decided to do this for the most popular cookie I knew - the chocolate chip cookie.  </p>
+							<p>Now I just needed a way to validate my hypotheses with quantitative results.   If I were to conduct hundreds of cookie experiments, I would test how cookie diameter increases with butter content and quantify crispiness by dropping cookies from different heights.  Instead, I decided to analyze data.</p>
+							<p>I intuitively wanted to run a linear regression algorithm to model the relationship between characteristics and compositions, but I didn't have the data for it.  However, by web-scraping I could get a data set for which easy recipe is assigned each a binary classification (i.e. crispy or chewy, thick or thin, smooth or wrinkled) by searching for key words in their titles and description.  I decided to do this for the most popular cookie I knew - the chocolate chip cookie, and analyze the results.  </p>
 							<p class="subtitle">Step 1: Web Scraping cookie recipes</p>
-							<p>I set up a web crawler using python's Scrapy to search for "chewy" chocolate chip cookies and "crispy" chocoalte chip cookies on the Food Network respostiory.  For each recipe, I scraped the title, url, ingredients, and directions.</p>
+							<p>I set up a web crawler using python's Scrapy to search for "chewy" chocolate chip cookies and "crispy" chocoalte chip cookies on the Food Network respostiory.  For each recipe, I scraped the title, url, ingredients, and directions.  However, there wasn't nearly enough chocolate chip cookie recipes; to fill the gap I manually scraped recipes from google and added them to a csv file.  Tedious, but it did the job.</p>
 							<p class="subtitle">Step 2: Calculating ingredient percentages by weight</p>
 							<p>Using regular expressions I cleaned up the data (converted symbols to text, converted fractions to floats, etc.), extracted the type, quantity, and units for each ingredient, and then calculated its weight in grams to arrive at a percentage.  Next, I created violin plots to see how crispy and chewy cookies compared in the four main ingredients; flour, butter, sugar, and egg. </p>
 							<div class="row">
@@ -158,18 +158,11 @@
 									<img src="images/sugar+fat_vs_protein.png" alt="" />
 								</div>
 							</div>
-							<p>In the graphs above we see that there is a clear trend between the two different types of cookies; crispy cookies gravitate towards the bottom right quadrant, proving that in general they have a high ratio of fat and sugar to protein.  Chewy cookies are the opposite, gravitating towards the top left corner which demonstrates high protein compared to fat and sugar. </p>
-							<p class="subtitle">Step 4: Running a classification algorithm to predict crispiness</p>				
-							<p></p>
-							<p></p>
-							<p></p>						
-							<p></p>							
-							<p></p>
-							<p></p>						
-							<p></p>
-							<p></p>
-							<p></p>						
-							<p></p>	
+							<p>In the graphs above we see that there is a clear trend between the two different types of cookies; crispy cookies gravitate towards the bottom right quadrant, proving that in general they have a high ratio of fat and sugar to protein.  Chewy cookies are the opposite, gravitating towards the top left corner which demonstrates high protein compared to fat and sugar. I didn't have numerical data to quantify smoothness and thickness, so I did this visually by calculating the expected smoothness and thickness and then looking at recipe images to see if it correlated correctly.</p>
+							<p class="subtitle">Step 4: Building a dashboard to recommend cookie recipes</p>				
+							<p>After verifying that my hypotheses were correct, I could now quantify the crispiness, smoothness, and thickness for each recipe in my database.  Using this data I decided to build a dashboard that allows you to select a recipe and then recommends 5 new recipes with similar characteristics.  This would allow me to "tweak" an existing recipe without doing so blindly.  For example, If I try a chocolate chip cookie and want to make it slightly crispier, I can find recipes that have similar characteristics in my database and use those as a guideline.</p>
+							<p>Here's a snapshot of the result:</p>
+							<span class="image main"><img src="images/flour.png" alt="" /></span>
 						</div>
 					</div>
 
